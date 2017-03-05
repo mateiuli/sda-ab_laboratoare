@@ -179,7 +179,7 @@ int stack_length(stack_t *stack)
 }
 
 /**
- *
+ * Cateva teste pentru fiecare functie. 
  */
 int main()
 {

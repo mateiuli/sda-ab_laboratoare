@@ -203,7 +203,7 @@ int queue_length(queue_t *queue)
 }
 
 /**
- *
+ * Cateva teste pentru fiecare functie. 
  */
 int main()
 {
