@@ -37,7 +37,7 @@ typedef struct {
  */
 typedef struct {
   /* Capul listei inlantuite. */
-  struct stack_t *head;
+  struct stack_node_t *head;
 
   /* Dimensiunea stivei. */
   unsigned int length;
