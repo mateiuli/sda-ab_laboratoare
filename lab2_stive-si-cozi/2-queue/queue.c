@@ -13,10 +13,10 @@
  */
 typedef struct {
 	/* Valoarea retinuta de catre nod. */
-  int val;
+	int val;
 
 	/* Pointer catre urmatorul element de tip nod. */
-  struct queue_node_t *next;
+	struct queue_node_t *next;
 } queue_node_t;
 
 /**
@@ -39,13 +39,13 @@ typedef struct {
  * DON'T TOUCH THIS.
  */
 typedef struct {
-  /* Capul listei inlantuite. */
-  struct queue_node_t *head;
+	/* Capul listei inlantuite. */
+	struct queue_node_t *head;
 	/* Coada listei inlantuite. */
 	struct queue_node_t *tail;
 
-  /* Dimensiunea cozii. */
-  unsigned int length;
+	/* Dimensiunea cozii. */
+	unsigned int length;
 } queue_t;
 
 /**
@@ -203,7 +203,7 @@ int queue_length(queue_t *queue)
 }
 
 /**
- * Cateva teste pentru fiecare functie. 
+ * Cateva teste pentru fiecare functie.
  */
 int main()
 {

@@ -13,10 +13,10 @@
  */
 typedef struct {
 	/* Valoarea retinuta de catre nod. */
-  int val;
+	int val;
 
 	/* Pointer catre urmatorul element de tip nod. */
-  struct stack_node_t *next;
+	struct stack_node_t *next;
 } stack_node_t;
 
 /**
@@ -36,11 +36,11 @@ typedef struct {
  * DON'T TOUCH THIS.
  */
 typedef struct {
-  /* Capul listei inlantuite. */
-  struct stack_node_t *head;
+	/* Capul listei inlantuite. */
+	struct stack_node_t *head;
 
-  /* Dimensiunea stivei. */
-  unsigned int length;
+	/* Dimensiunea stivei. */
+	unsigned int length;
 } stack_t;
 
 /**
@@ -179,7 +179,7 @@ int stack_length(stack_t *stack)
 }
 
 /**
- * Cateva teste pentru fiecare functie. 
+ * Cateva teste pentru fiecare functie.
  */
 int main()
 {
