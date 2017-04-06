@@ -1,5 +1,6 @@
 #include "list.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * TASK 1.
@@ -8,9 +9,9 @@
  */
 
 int main()
-{	
+{
 	printf("Lab 1 - Liste inlantuite.\n");
-	
+
 	/**************************************************************************
 	 * Test Task 2.
 	 * Creati un nod cu o anumita valoare.
@@ -110,7 +111,7 @@ node_t *create(int val)
 /**
  * TASK 3.
  *
- * Functia creaza un nou nod cu valoarea 'val' 
+ * Functia creaza un nou nod cu valoarea 'val'
  * si il adauga la finalul listei.
  *
  * Functia returneaza noul cap al listei (daca e cazul), sau vechiul.
@@ -135,7 +136,7 @@ void print_list(node_t *list_head)
 /**
  * TASK 5.
  *
- * Functia creaza un nou nod cu valoarea 'val' 
+ * Functia creaza un nou nod cu valoarea 'val'
  * si il adauga la finalul liste.
  *
  * Functia returneaza noul cap al listei (daca e cazul), sau vechiul.
@@ -178,8 +179,8 @@ node_t *modify_node(node_t *list_head, int val, int new_val)
 /**
  * TASK 8.
  *
- * Functia creaza un nod nou cu valoarea 'after_val' si il 
- * insereaza dupa nodul cu valoarea 'val'. 
+ * Functia creaza un nod nou cu valoarea 'after_val' si il
+ * insereaza dupa nodul cu valoarea 'val'.
  * Se returneaza un pointer catre nodul nou creat.
  *
  * Daca nodul cu valoarea 'val' nu exista in lista, lista

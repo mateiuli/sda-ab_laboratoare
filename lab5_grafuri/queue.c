@@ -19,7 +19,7 @@ queue_t *queue_create()
 	return queue;
 }
 
-queue_node_t *queue_node_create(void *val)
+queue_node_t *queue_node_create(int val)
 {
 	queue_node_t *node = NULL;
 
@@ -30,7 +30,7 @@ queue_node_t *queue_node_create(void *val)
 	return node;
 }
 
-void queue_push(queue_t *queue, void *val)
+void queue_push(queue_t *queue, int val)
 {
 	queue_node_t *node = queue_node_create(val);
 
@@ -52,9 +52,9 @@ incr_length:
 	queue->length++;
 }
 
-void * queue_pop(queue_t *queue)
+int queue_pop(queue_t *queue)
 {
-	void *val = 0;
+	int val = 0;
 	queue_node_t *node;
 
 	if(queue == NULL || queue->head == NULL)
@@ -70,7 +70,7 @@ void * queue_pop(queue_t *queue)
 	return val;
 }
 
-void *queue_front(queue_t *queue)
+int queue_front(queue_t *queue)
 {
 	if(queue == NULL || queue->head == NULL)
 		return 0;
@@ -78,7 +78,7 @@ void *queue_front(queue_t *queue)
 	return queue->head->val;
 }
 
-void *queue_back(queue_t *queue)
+int queue_back(queue_t *queue)
 {
 	if(queue == NULL || queue->tail == NULL)
 		return 0;

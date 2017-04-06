@@ -8,7 +8,7 @@
  * un nod dintr-o lista simplu inlantuita.
  * Valoarea pe care o va retine un nod va fi de tip intreg.
  *
- * Sugestii de nume pentru variabile: val, next. =) 
+ * Sugestii de nume pentru variabile: val, next. =)
  */
 typedef struct {
 	/* TODO: Valoarea retinuta de catre nod. */
@@ -25,7 +25,7 @@ node_t *create(int val);
 
 
 /**
- * Functia creaza un nou nod cu valoarea 'val' 
+ * Functia creaza un nou nod cu valoarea 'val'
  * si il adauga la finalul listei.
  *
  * Functia returneaza noul cap al listei (daca e cazul), sau vechiul.
@@ -39,7 +39,7 @@ node_t *append_node(node_t *list_head, int val);
 void print_list(node_t *list_head);
 
 /**
- * Functia creaza un nou nod cu valoarea 'val' 
+ * Functia creaza un nou nod cu valoarea 'val'
  * si il adauga la finalul liste.
  *
  * Functia returneaza noul cap al listei (daca e cazul), sau vechiul.
@@ -64,8 +64,8 @@ node_t *get_node(node_t *list_head, int val);
 node_t *modify_node(node_t *list_head, int val, int new_val);
 
 /**
- * Functia creaza un nod nou cu valoarea 'after_val' si il 
- * insereaza dupa nodul cu valoarea 'val'. 
+ * Functia creaza un nod nou cu valoarea 'after_val' si il
+ * insereaza dupa nodul cu valoarea 'val'.
  * Se returneaza un pointer catre nodul nou creat.
  *
  * Daca nodul cu valoarea 'val' nu exista in lista, lista
