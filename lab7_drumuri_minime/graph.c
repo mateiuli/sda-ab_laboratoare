@@ -3,7 +3,6 @@
 #include <limits.h>
 #include <string.h>
 
-
 #define COST_MAX 10000
 
 /**
