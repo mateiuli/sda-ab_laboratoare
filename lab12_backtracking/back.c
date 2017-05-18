@@ -7,7 +7,7 @@
 #include <string.h>
 #include <limits.h>
 
-/* DO NOT TOCH THESE LINES! */
+/* DO NOT TOUCH THESE LINES! */
 #define MAX_LEN_TASK   20
 #define MAX_ASCII_CODE 255
 #define min(a, b) ((a) < (b) ? (a) : (b))
