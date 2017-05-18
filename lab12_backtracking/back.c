@@ -334,9 +334,9 @@ void back_task5(char **map, int n, int i, int j)
 	if (i == 0 && j == 0) {
 		/* Afisam matricea. */
 		for (int i = 0; i < n; i++) {
-		 for (int j = 0; j < n; j++)
-			 printf("%c ", map[i][j]);
-		 printf("\n");
+			for (int j = 0; j < n; j++)
+				printf("%c ", map[i][j]);
+			printf("\n");
 		}
 		printf("\n");
 	} else {
