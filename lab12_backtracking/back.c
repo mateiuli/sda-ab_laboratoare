@@ -34,16 +34,20 @@ int pass_match(char *pass);
  */
 void back_task1(char *sol, int k, int n)
 {
-	if (k >= n) {
-		/* Am gasit o solutie. */
-		printf("%s\n", sol);
-
-	} else {
-		for (char c = 'A'; c <= 'B'; c++) {
-			sol[k] = c;
-			back_task1(sol, k + 1, n);
-		}
-	}
+	/**
+	 * TODO
+	 *
+	 * // Daca am construit o solutie, o afisez
+	 * 1. if k >= n then
+	 *     1.1. print sol
+	 * // Daca mai am de construit
+	 * 2. else
+	 *     2.1. for c = 'A', 'B'
+	 *         // Pun pe pozitia k caracterul c
+	 *         2.2. sol[k] = c
+	 *         // Merg in adancime - completez urmatorul nivel (k + 1)
+	 *         2.3. back_task1(sol, k + 1, n)
+	 */
 }
 
 /**
@@ -66,26 +70,25 @@ int used[MAX_LEN_TASK];
 
 void back_task2(char *sir, int len, char *sol, int k)
 {
-	if (k >= len) {
-		/* Am gasit solutia. O afisez. */
-		printf("%s\n", sol);
-	} else {
-		for (int i = 0; i < len; i++) {
-			if (!used[i]) {
-				/* Adaug la solutia in constructie pe sir[i]. */
-				sol[k] = sir[i];
-
-				/* Marchez sir[i] ca folosit. */
-				used[i] = 1;
-
-				/* Acum ca pe pozitia k il am pe sir[i], incerc sa pun ceva pe k + 1. */
-				back_task2(sir, len, sol, k + 1);
-
-				/* Marchez sir[i] ca nefolosit. */
-				used[i] = 0;
-			}
-		}
-	}
+	/**
+	 * TODO
+	 *
+	 * // Daca am construit o solutie, o afisez
+	 * 1. if k >= n then
+	 *     1.1. print sol
+	 * // Daca mai am de construit
+	 * 2. else
+	 *     2.1. for i = 0, len - 1
+	 *         2.2. if not used[i]
+	 *             // Pun pe pozitia k caracterul sir[i]
+	 *             2.3. sol[k] = sir[i]
+	 *             // Marchez sir[i] ca folosit.
+	 *             2.4. used[i] = 1;
+	 *             // Merg in adancime - completez urmatorul nivel (k + 1)
+	 *             2.5. back_task2(sir, len, sol, k + 1);
+	 *             // Marchez sir[i] ca nefolosit - pentru alte solutii.
+	 *             2.6. used[i] = 0;
+	 */
 }
 
 /**
@@ -98,7 +101,8 @@ void back_task2(char *sir, int len, char *sol, int k)
  * Stiti emailul dar nu stiti parola. Folositi un algoritm bruteforce pentru
  * gasirea parolei.
  *
- * Bruteforce presupune generarea tuturor parolelor cu proprietatile de mai jos:
+ * Bruteforce presupune generarea tuturor parolelor.
+ * Parola profului are urmatoarele proprietati:
  *   - lungime fixa de 9 caractere
  *   - contine doar caracterele 'm', 'n' si 'o'
  *
@@ -107,20 +111,23 @@ void back_task2(char *sir, int len, char *sol, int k)
  */
 void back_task3(char *caractere, int len, int pass_len, char *sol, int k)
 {
-	if (k >= pass_len) {
-		/* Am construit un sir - verific daca este o solutie. */
-		if(pass_match(sol))
-			printf("Pass: %s\n", sol);
-
-	} else {
-		for (int i = 0; i < len; i++) {
-			/* Adaug la solutia in constructie pe sir[i]. */
-			sol[k] = caractere[i];
-
-			/* Acum ca pe pozitia k il am pe sir[i], incerc sa pun ceva pe k + 1. */
-			back_task3(caractere, len, pass_len, sol, k + 1);
-		}
-	}
+	/**
+	 * TODO
+	 *
+	 * // Daca am construit o parola, o testez si o afisez daca e cea buna
+	 * 1. if k >= pass_len then
+	 *     1.1. if pass_match(sol)
+	 *          1.2. printf sol
+	 *
+	 * // Daca mai am de construit (nu am ajuns la lungimea pass_len).
+	 * 2. else
+	 *     // Parcurg elementele multimii 'carctere'
+	 *     2.1. for i = 0, len - 1
+	 *         // Pun pe pozitia k caracterul 'caractere[i]'
+	 *         2.2. sol[k] = caractere[i]
+	 *         // Acum ca pe pozitia k il am pe caractere[i], incerc sa pun ceva pe k + 1.
+	 *         2.3. back_task3(caractere, len, pass_len, sol, k + 1);
+	 */
 }
 
 /**
@@ -138,15 +145,17 @@ void task3()
 
 	/**
 	 * TODO: Apelati functia back_task3.
-	 * Functia primeste multimea de caractere si numarul acestora.
-	 * Mai primeste lungimea parolei care trebuie generata (pass_len = 9).
-	 * Primeste un vector temporar unde se construiesc solutiile (sol).
-	 * Ultimul parametru este nivelul de la care sa inceapa cautarea de parole
-	 * (se porneste de la un sir vid, deci lungimea initiala este 0).
+	 *
+	 * Functia primeste urmatorii parametrii:
+	 * Parametrul 1: multimea de caractere folosite
+	 * Parametrul 2: numarul de caractere din multime
+	 * Parametrul 3: lungimea parolei cautate (9)
+	 * Parametrul 4: un vector temporar in care se construiesc parolelel (pass).
+	 * Parametrul 5: lungimea initiala a parolei (se porneste de la un sir vid,
+	 * deci parametrul este 0).
 	 */
-	back_task3(caractere, 3, 9, pass, 0);
-}
 
+}
 
 /**
  * Task 4: Problema reginelor.
@@ -223,25 +232,26 @@ int is_ok_pos(char **m, int n, int row, int col)
  */
 void back_task4(char **m, int n, int k)
 {
-	if (k >= n) {
-		/* Am gasit o solutie. */
-		printf("Solutia: \n");
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				printf("%c ", m[i][j]);
-			}
-			printf("\n");
-		}
-		printf("\n");
-	} else {
-		for (int i = 0; i < n; ++i) {
-			if(is_ok_pos(m, n, k, i)) {
-				m[k][i] = 'R';
-				back_task4(m, n, k + 1);
-				m[k][i] = '_';
-			}
-		}
-	}
+	/**
+	 * TODO
+	 *
+	 * // Daca am construit o solutie, o afisez
+	 * 1. if k >= n then
+	 *     1.1. printati matricea m de dimensiune nxn
+	 *
+	 * // Daca mai am de construit
+	 * 2. else
+	 *     // Incerc sa pun regina k pe fiecare coloana i pe rand
+	 *     2.1. for i = 0, n - 1
+	 *         // Daca e safe sa pun regina pe linia k, coloana i
+	 *         2.2. if is_ok_pos(m, n, k, i)
+	 *             // Marchez cu R pozitia reginei k
+	 *             2.3. m[k][i] = 'R';
+	 *             // Merg in adancime - incerc sa pun regina k + 1
+	 *             2.4. back_task4(m, n, k + 1);
+	 *             // La intoarcere, sterg regina - o voi pune pe alta coloana
+	 *             2.5. m[k][i] = '_';
+	 */
 }
 
 /**
@@ -295,29 +305,48 @@ void back_task5(char **map, int n, int i, int j)
 	static int dirI[] = {-1, 1,  0, 0};
 	static int dirJ[] = { 0, 0, -1, 1};
 
+	/**
+	 * TODO
+	 *
+	 * // Daca am ajuns la coordonatele (0, 0) - am construt o solutie
+	 * 1. if i == 0 AND j == 0 then
+	 *     1.1. printati matricea map de dimensiune nxn
+	 *
+	 * // Daca nu am ajuns inca pe pozitia finala
+	 * 2. else
+	 *     // Merg pe rand, pe cele patru directii ale casutei curente (i, j).
+	 *     2.1. for d = 0, 3
+	 *         // Calculez coordonatele casutei vecine
+	 *         // Ma asigur ca coordonatele nu depasesc dimensiunea matricei.
+	 *         2.1. newI = min(n - 1, max(i + dirI[d], 0))
+	 *         2.2. newJ = min(n - 1, max(j + dirJ[d], 0))
+	 *
+	 *         // Daca noua directie este libera
+	 *         2.3 if map[newI][newJ] == '_'
+	 *             // O marchez ca ocupata.
+	 *             2.4. map[newI][newJ] = 'X'
+	 *             // Merg in adancime - ma mut pe casuta (newI, newJ).
+	 *             2.5. back_task5(map, n, newI, newJ)
+	 *             // La intoarcere eliberez casuta - voi incerca cu alta directie.
+	 *             2.6. map[newI][newJ] = '_'
+	 */
+
 	if (i == 0 && j == 0) {
-		/* Am ajuns la punctul final. */
-		printf("Solutia: \n");
+		/* Afisam matricea. */
 		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				printf("%c ", map[i][j]);
-			}
-			printf("\n");
+		 for (int j = 0; j < n; j++)
+			 printf("%c ", map[i][j]);
+		 printf("\n");
 		}
 		printf("\n");
 	} else {
+		/* Mergem pe rand pe cele 4 directii. */
 		for (int d = 0; d < 4; d++) {
 			int newI = min(n - 1, max(i + dirI[d], 0));
 			int newJ = min(n - 1, max(j + dirJ[d], 0));
 
-			/* Daca noua directie este libera. */
-			if (map[newI][newJ] == '_') {
-				/* Marchez ca ocupata. */
-				map[newI][newJ] = 'X';
-				back_task5(map, n, newI, newJ);
-				/* Eliberez casuta. */
-				map[newI][newJ] = '_';
-			}
+			/* TODO: vedeti algoritmul de mai sus. */
+
 		}
 	}
 }
@@ -380,12 +409,9 @@ int main()
 		memcpy(map[i], cmap[i], 6);
 	}
 
-	printf("Task 5: Help John Snow\n");
+	printf("Task 5: John Snow\n");
 	back_task5(map, 6, 5, 5);
 	printf("\n");
-
-	if (map[0][0] == 'X' && map[5][5] == 'X')
-		printf("Summer is comming\n");
 
 	return 0;
 }
